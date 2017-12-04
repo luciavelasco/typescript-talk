@@ -3,10 +3,11 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build:live",
+    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts",
+    "build": "tsc -d"
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,15 @@
   "bugs": {
     "url": "https://github.com/luciavelasco/typescript-talk/issues"
   },
-  "homepage": "https://github.com/luciavelasco/typescript-talk#readme"
+  "homepage": "https://github.com/luciavelasco/typescript-talk#readme",
+  "dependencies": {
+    "@types/moment": "^2.13.0",
+    "moment": "^2.19.3"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.54",
+    "nodemon": "^1.12.4",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.6.2"
+  }
 }
