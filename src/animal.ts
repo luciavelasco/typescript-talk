@@ -5,10 +5,15 @@ export interface IAnimal {
   name: string,
   sound: string,
   age: number,
-  type: TAnimal
+  type: TAnimal,
+  body?: IBody
 }
 
-// Using Generics in Abstract Classes
+export interface IBody {
+  numberOfLegs: number
+}
+
+// Using Generics and Abstract Classes
 export default abstract class Animal<T extends IAnimal> {
   constructor(private animal: T){}
 

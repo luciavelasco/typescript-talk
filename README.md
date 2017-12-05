@@ -1,10 +1,24 @@
 
-`npm i typescript --save-dev`
-`npm install @types/node --save-dev`
-`node ./node_modules/typescript/lib/tsc --init`
-`npm install ts-node --save-dev`
-`npm install nodemon --save-dev`
+1. `npm i typescript --save-dev`
+
+2. `npm install @types/node --save-dev`
+
+3. `node ./node_modules/typescript/lib/tsc --init` or manually create a `tsconfig.json` file that looks like this:
+```
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "strict": true
+  }
+}
+```
+
+4. `npm install ts-node --save-dev`
+
+5. `npm install nodemon --save-dev`
 
 
-`npm run build`
-`node ./index.js`
+6. `npm run build`
+
+7. `node ./index.js`
