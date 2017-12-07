@@ -1,11 +1,15 @@
+'use strict'
+import { Bird, IBird } from './bird';
+
 // // How your IDE helps you (static type checking)
+
+//
 // function makePrincess(character: 'wise' | 'sweet' | 'cunning', hair: string, name: string) {
 //   return `${name} is a ${character} princess with ${hair} hair`
 // }
-// // console.log(makePrincess())
-// // console.log(makePrincess('caring', 'long', 'Aurora'))
+// // console.log(makePrincess('wise', ))
+// console.log(makePrincess('caring' as 'cunning', 'long', 'Aurora'))
 // console.log(makePrincess('wise', 'long', 'Aurora'))
-
 
 // function makeChicken() {
 //   return new Bird({
@@ -16,8 +20,8 @@
 //     //   numberOfLegs: 'cat'
 //     // },
 //     type: 'bird'
-//   });
-//   // } as IBird)
+//   // });
+//   } as IBird)
 // }
 
 // Example of static type checking

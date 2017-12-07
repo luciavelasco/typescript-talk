@@ -1,16 +1,24 @@
-// Types of imports
+import './src/typingFunctions';
+import './src/staticTypeChecking';
+import './src/typingArrays';
 
-// import * as moment from 'moment';
-// import moment = require('moment');
-// const moment = require('moment');
-// import Animal, { IAnimal } from './src/animal';
-// import './src/typingFunctions';
-// import './src/staticTypeChecking';
+/**
+ * Types of imports
+ */
+// import * as moment from 'moment'; // takes everything from file as moment
+// import moment = require('moment'); // takes everything from file as moment
+// // const moment = require('moment'); // takes everything from file as moment (how you would do it in node)
+// import Animal from './src/animal'; // takes the default export as Animal
+// import { IAnimal } from './src/animal'; // takes named export IAnimal
+// import Animal, { IAnimal } from './src/animal'; // takes the default export and a names export
+// import './src/typingArrays'; // imports the file
 
 // console.log('Hello World!');
 
 
 /**
+ * 0. Where TS came from
+ *    - features of the language pre-ES6 and now
  * 1. Setup
  * 2. Different types and how to use them
  *    - Bonus, why they're so good for documentation

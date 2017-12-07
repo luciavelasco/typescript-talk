@@ -1,19 +1,20 @@
 type TFruit = 'banana' | 'orange' | 'apple'
+type TVegetables = 'leek' | 'carrot'
 const fruitBowl: TFruit[] = ['banana', 'banana', 'orange', 'apple', 'apple', 'apple']
-const fruitAndVegetables = ['banana', 'banana', 'banana', 'leek', 'leek', 'orange']
+const fruitAndVegetables: Array<TFruit | TVegetables> = ['banana', 'banana', 'banana', 'leek', 'leek', 'orange']
 
-// // Typehint parameters and return
-// function countBananas(fruit: TFruit[]): number {
-//   return fruit.filter(v => {
-//     return v === 'banana'
-//   }).length
-// }
-//
-// // Typecast arguments
+// Typehint parameters and return
+function countBananas(fruit: TFruit[]): number {
+  return fruit.filter(v => {
+    return v === 'banana'
+  }).length
+}
+
+// Typecast arguments
 // console.log(`There are ${countBananas(fruitBowl)} bananas`)
 // console.log(`There are ${countBananas(fruitAndVegetables as TFruit[])} bananas`)
 
-// // Type any
+// // Type any and using void
 // function countApples(fruit: any): number | void {
 //   if (!fruit || !Array.isArray(fruit)) return;
 //
@@ -24,17 +25,18 @@ const fruitAndVegetables = ['banana', 'banana', 'banana', 'leek', 'leek', 'orang
 // console.log(`There are ${countApples(fruitBowl)} apples`)
 // console.log(`There are ${countApples({})} apples`)
 
-// // Promise and using void
-// async function countOranges(fruit: any): Promise<number | void> {
+// Promise, typehinting functions
+// function countOranges(fruit: TFruit[]): number | void {
 //   if (!fruit || !Array.isArray(fruit)) return;
 //   return fruit.filter(v => {
 //     return v === 'orange'
 //   }).length
 // }
-// const numberOfOranges = countOranges(fruitBowl)
-// console.log(`There are ${numberOfOranges} oranges`)
-//
-// countOranges(fruitBowl).then(numberOfOranges => {
+// async function promiseFruit(countFruit: (fruit: TFruit[]) => any): Promise<any> {
+//   return countFruit(fruitBowl)
+// }
+// console.log(`There are ${countOranges(fruitBowl)} oranges`)
+// promiseFruit(countOranges).then(numberOfOranges => {
 //   if (numberOfOranges)
 //   console.log(`There are ${numberOfOranges} oranges`)
 // })
@@ -45,10 +47,10 @@ const fruitAndVegetables = ['banana', 'banana', 'banana', 'leek', 'leek', 'orang
 // }
 // juggleOranges()
 
-// // undefined and enums (and null)
+// undefined and enums (and null)
 // enum Brushable {
 //   Teeth,
-//   Hair
+//   Hair = 1
 // }
 // function brush(brushSize: 'big' | 'small' | undefined, teethOrHair: Brushable) {
 //   const brushable = teethOrHair === Brushable.Hair ? 'hair' : 'teeth';
@@ -62,6 +64,12 @@ const fruitAndVegetables = ['banana', 'banana', 'banana', 'leek', 'leek', 'orang
 //   return options[Math.floor(Math.random() * options.length)];
 // }
 // console.log(grabOne<TFruit>(fruitBowl))
+
+// // Intersect Types
+// function getFruitAndVegetables(): Array<TFruit | TVegetables> {
+//   return [...fruitBowl, ...fruitAndVegetables]
+// }
+// console.log(getFruitAndVegetables)
 
 
 // import * as moment from 'moment';

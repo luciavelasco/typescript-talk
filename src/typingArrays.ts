@@ -1,14 +1,20 @@
+type TStringArray = string[]
+let stringArray: TStringArray = ['cat', 'dog'];
+// stringArray = [1]; // invalid
+stringArray = []; // valid
 
-// Array vs []
+
+// Type, Generics and Array vs []
 type TArray<T> = T[];
 // type TArray<T> = Array<T>;
-type TStringOrNumber = number | string
-let array: TArray<'cat'> = ['cat'];
+let catArray: TArray<'cat'> = ['cat', 'cat', 'cat'];
 // array = ['dog']; // invalid
 
-
+// Union types
 type TArrayOfStringsOrNumbers = Array<string | number>
 let arrayOfStringsOrNumbers: TArrayOfStringsOrNumbers = [1, 'cat', 3]
+type TOtherArrayOfStringsOrNumbers = (string | number)[]
+let otherArrayOfStringsOrNumbers: TOtherArrayOfStringsOrNumbers = [1, 'cat', 3]
 
 
 type TStringOrArrayOfNumbers = string | number[]
@@ -29,3 +35,6 @@ let arrayOfStringOrNumberThenNumber: TArrayOfStringOrNumberThenNumber = ['cat', 
 arrayOfStringOrNumberThenNumber = [1, 1, 3]
 // arrayOfStringOrNumberThenNumber = [1, 'cat', 3] // invalid
 // arrayOfStringOrNumberThenNumber = [1, {}, 3] // invalid
+
+
+// type TStringOrNumber = number | string
